@@ -1,49 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smalinow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 19:30:11 by smalinow          #+#    #+#             */
-/*   Updated: 2024/12/16 19:30:13 by smalinow         ###   ########.fr       */
+/*   Created: 2024/12/02 20:27:15 by smalinow          #+#    #+#             */
+/*   Updated: 2024/12/05 20:22:17 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
+	unsigned char	*s;
+	unsigned char	*d;
+	size_t			i;
 
 	i = 0;
-	while (s[i])
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	while (i < n)
 	{
-		if (s[i] == (char) c)
-		{
-			return ((char *) &s[i]);
-		}
+		d[i] = s[i];
 		i++;
 	}
-	if (c == '\0')
-		return ((char *) &s[i]);
-	return (NULL);
+	return (dest);
 }
 /*
-int main()
+int main(void)
 {
-    const char *str = "Hello, world!";
-    char ch = 'o';
+    char src[] = "Hello, World!";
+    char dest[20];
 
-    char *result = ft_strchr(str, ch);
+    // Copy 13 bytes from src to dest
+    memcpy(dest, src, 13);
 
-    if (result)
-    {
-        printf("Character '%c' found at position: %ld\n", ch, result - str);
-    }
-    else
-    {
-        printf("Character '%c' not found.\n", ch);
-    }
+    printf("Source: %s\n", src);
+    printf("Destination: %s\n", dest);
 
     return 0;
 }

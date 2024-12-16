@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smalinow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 19:30:04 by smalinow          #+#    #+#             */
-/*   Updated: 2024/12/16 19:30:04 by smalinow         ###   ########.fr       */
+/*   Created: 2024/12/02 19:34:03 by smalinow          #+#    #+#             */
+/*   Updated: 2024/12/05 20:22:47 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		return (c + 32);
-	}
-	else
-	{
-		return (c);
-	}
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
