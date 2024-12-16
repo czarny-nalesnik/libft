@@ -10,7 +10,7 @@ int static	ft_strlen(const char *str)
 	return (i);
 }
 
-char static	*ft_strcpy(char *dest, const char *src, int len)
+char static	*ft_strncpy(char *dest, const char *src, int len)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *src)
 	dest = (char *) malloc(src_len);
 	if (dest == NULL)
 		return (NULL);
-	ft_strcpy(dest, src, src_len);
+	ft_strncpy(dest, src, src_len);
 	return (dest);
 }
 /*
