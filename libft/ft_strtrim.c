@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int static	ft_strlen(char const *str)
+static int	ft_strlen(char const *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int static	ft_strlen(char const *str)
 	return (i);
 }
 
-char static	*ft_strncpy(char *dest, const char *src, int len)
+static char	*ft_strncpy(char *dest, const char *src, int len)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ char static	*ft_strncpy(char *dest, const char *src, int len)
 	return (dest);
 }
 
-char static	*ft_strdup(const char *src)
+static char	*ft_strdup(const char *src)
 {
 	int		src_len;
 	char	*dest;
@@ -49,7 +49,7 @@ char static	*ft_strdup(const char *src)
 	return (dest);
 }
 
-char static	*ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 

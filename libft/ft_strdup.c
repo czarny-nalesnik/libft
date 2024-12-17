@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int static	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int static	ft_strlen(const char *str)
 	return (i);
 }
 
-char static	*ft_strncpy(char *dest, const char *src, int len)
+static char	*ft_strncpy(char *dest, const char *src, int len)
 {
 	int	i;
 

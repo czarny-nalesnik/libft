@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int static	ft_skipwhitespace(const char *str)
+static int	ft_skipwhitespace(const char *str)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int static	ft_skipwhitespace(const char *str)
 	return (i);
 }
 
-int static	ft_checksign(const char c, int *i)
+static int	ft_checksign(const char c, int *i)
 {
 	int	sign;
 
