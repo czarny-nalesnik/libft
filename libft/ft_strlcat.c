@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_strlen(const char *str)
+#include <limits.h>
+
+static int	ft_strlen(const char *str, int max_len)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] && i < max_len)
 		i++;
 	return (i);
 }
@@ -26,8 +28,8 @@ int	ft_strlcat(char *dst, const char *src, int dstsize)
 	int	dst_len;
 	int	src_len;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst, dstsize);
+	src_len = ft_strlen(src, INT_MAX);
 	if (dstsize == 0)
 		return (src_len);
 	if (dstsize <= dst_len)
