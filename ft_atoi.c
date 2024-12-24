@@ -9,6 +9,7 @@
 /*   Updated: 2024/12/16 19:29:09 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 static int	ft_skipwhitespace(const char *str)
 {

@@ -9,8 +9,7 @@
 /*   Updated: 2024/12/05 20:22:31 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {

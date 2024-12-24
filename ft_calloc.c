@@ -9,25 +9,7 @@
 /*   Updated: 2024/12/16 19:30:33 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-static void	*ft_memset(void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	value;
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *) s;
-	value = (unsigned char) c;
-	i = 0;
-	while (i < n)
-	{
-		ptr[i] = value;
-		i++;
-	}
-	return (s);
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

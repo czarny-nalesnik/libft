@@ -9,18 +9,7 @@
 /*   Updated: 2024/12/16 19:29:33 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-static int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 static char	*ft_strncpy(char *dest, const char *src, int len)
 {
@@ -34,37 +23,6 @@ static char	*ft_strncpy(char *dest, const char *src, int len)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-static char	*ft_strdup(const char *src)
-{
-	int		src_len;
-	char	*dest;
-
-	src_len = ft_strlen(src) + 1;
-	dest = (char *) malloc(src_len);
-	if (dest == NULL)
-		return (NULL);
-	ft_strncpy(dest, src, src_len);
-	return (dest);
-}
-
-static char	*ft_strchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char) c)
-		{
-			return ((char *) &s[i]);
-		}
-		i++;
-	}
-	if (c == '\0')
-		return ((char *) &s[i]);
-	return (NULL);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

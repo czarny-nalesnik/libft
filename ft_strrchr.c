@@ -9,8 +9,7 @@
 /*   Updated: 2024/12/05 20:19:48 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -21,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	last_occurrence = -1;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char) c)
 		{
 			last_occurrence = i;
 		}

@@ -9,20 +9,7 @@
 /*   Updated: 2024/12/05 20:18:55 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
-
-static void	ft_memcpy(unsigned char *dest, unsigned char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-}
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

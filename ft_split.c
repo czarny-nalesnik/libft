@@ -9,10 +9,7 @@
 /*   Updated: 2024/12/16 19:36:30 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static char	**free_array(char **ptr, int i)
 {

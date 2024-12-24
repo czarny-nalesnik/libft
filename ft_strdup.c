@@ -9,18 +9,7 @@
 /*   Updated: 2024/12/16 19:29:58 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-static int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 static char	*ft_strncpy(char *dest, const char *src, int len)
 {

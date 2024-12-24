@@ -9,12 +9,11 @@
 /*   Updated: 2024/12/16 19:29:52 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <limits.h>
-
-static int	ft_strlen(const char *str, int max_len)
+static size_t	ft_speciallen(const char *str, size_t max_len)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] && i < max_len)
@@ -22,14 +21,14 @@ static int	ft_strlen(const char *str, int max_len)
 	return (i);
 }
 
-int	ft_strlcat(char *dst, const char *src, int dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-	int	dst_len;
-	int	src_len;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
-	dst_len = ft_strlen(dst, dstsize);
-	src_len = ft_strlen(src, INT_MAX);
+	dst_len = ft_speciallen(dst, dstsize);
+	src_len = ft_speciallen(src, SIZE_MAX);
 	if (dstsize == 0)
 		return (src_len);
 	if (dstsize <= dst_len)

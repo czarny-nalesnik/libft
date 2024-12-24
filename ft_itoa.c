@@ -9,78 +9,71 @@
 /*   Updated: 2024/12/05 20:19:48 by smalinow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdlib.h>
-#include <limits.h>
-
-static int	is_negative(int n)
+static void	convert_to_str(char *str, size_t *size, int n)
 {
 	if (n < 0)
-		return (-1);
-	return (1);
-}
-
-static int	digit_amount(int n)
-{
-	int	result;
-
-	result = 0;
-	if (n == 0)
-		return (1);
+	{
+		str[0] = '-';
+		n = -n;
+	}
 	while (n != 0)
 	{
-		n /= 10;
-		result++;
+		str[*size] = (n % 10) + '0';
+		n = n / 10;
+		(*size)--;
 	}
-	return (result);
 }
 
-static char	*str_reverse(char *src)
+static int	ft_number_len(int nb)
 {
-	int		i;
-	int		str_len;
-	char	temp;
+	size_t	len;
 
-	i = 0;
-	while (src[i])
-		i++;
-	str_len = i - 1;
-	i = 0;
-	while (str_len > i)
+	len = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
 	{
-		temp = src[i];
-		src[i] = src[str_len];
-		src[str_len] = temp;
-		i++;
-		str_len--;
+		nb = -nb;
+		len++;
 	}
-	return (src);
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
+}
+
+static char	*ft_limits(int nbr)
+{
+	if (nbr == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	return (NULL);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		n_length;
-	int		i;
-	int		sign;
+	size_t	size;
+	char	*str;
+	char	*limit;
 
-	if (n == -2147483648)
-		return ("-2147483648");
-	n_length = digit_amount(n);
-	result = (char *) malloc(sizeof(char) * (n_length + 2));
-	if (!result)
+	limit = ft_limits(n);
+	size = ft_number_len(n);
+	if (limit)
+		return (limit);
+	str = malloc(size + 1);
+	if (!str)
 		return (NULL);
-	sign = is_negative(n);
-	n *= sign;
-	i = 0;
-	while (n_length > i)
+	if (n == 0)
 	{
-		result[i] = (n % 10) + '0';
-		n /= 10;
-		i++;
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
 	}
-	if (sign == -1)
-		result[i] = '-';
-	result[i + (sign == -1)] = '\0';
-	return (str_reverse(result));
+	str[size] = '\0';
+	size--;
+	convert_to_str(str, &size, n);
+	return (str);
 }
